@@ -1,4 +1,4 @@
-tasks.withType(JavaCompile) {
+/*tasks.withType(JavaCompile) {
     options.encoding = 'utf-8'
     options.compilerArgs = ['-Xlint:-options']
 }
@@ -9,4 +9,4 @@ tasks.withType(GroovyCompile) {
     if (!JavaVersion.current().java8Compatible) {
         options.forkOptions.jvmArgs = ['-XX:MaxPermSize=512m']
     }
-}
+}*/

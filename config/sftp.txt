@@ -1,0 +1,4 @@
+sftp.ameresco.com
+Username: sftp_a037_g30
+Password: $mHs#4&U
+Use port 22
