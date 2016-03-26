@@ -1,0 +1,7 @@
+/*apply plugin: 'groovy'
+apply plugin: 'checkstyle'
+//apply plugin: 'codenarc'
+
+repositories {
+    mavenCentral()
+}*/

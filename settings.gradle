@@ -1,0 +1,25 @@
+include "shared"
+include "util"
+include "model"
+include "resources"
+include "core"
+include "api"
+include "web"
+include "transfer"
+
+// I HATE THIS BUT IT TOOK TOOOOO MUCH TIME SO I MOVED ON
+def deepProject = ["api", "web", "transfer"];
+
+rootProject.name = "aeg"
+rootProject.children.each {project ->
+    String fileBaseName = project.name.replaceAll("\\p{Upper}") { "-${it.toLowerCase()}" }
+    String prefix = "projects";
+    if(deepProject.contains(fileBaseName)) {
+        prefix += "/ims"
+    }
+    String projectDirName = "$prefix/$fileBaseName"
+    project.projectDir = new File(settingsDir, projectDirName)
+    project.buildFileName = "${fileBaseName}.gradle"
+    assert project.projectDir.isDirectory()
+    assert project.buildFile.isFile()
+}
